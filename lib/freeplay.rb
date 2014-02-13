@@ -25,6 +25,7 @@ class Freeplay
 
   def get_user(unique_id, id_type=5)
     query = config.merge(
+      'deviceType' => @device_type,
       'IDType' => id_type,
       'uniqueID' => unique_id
     )
@@ -49,6 +50,6 @@ class Freeplay
   private
 
   def config
-    {"token" => @api_token, "key" => @api_key, "appID" => @app_id, "deviceType" => @device_type}
+    {'token' => @api_token, 'key' => @api_key, 'appID' => @app_id}
   end
 end
