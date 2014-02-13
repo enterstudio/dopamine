@@ -9,4 +9,6 @@ Gem::Specification.new do |s|
   s.files       = ["lib/freeplay.rb"]
   s.homepage    = 'http://rubygems.org/gems/freeplay'
   s.license     = 'MIT'
+
+  s.add_runtime_dependency 'httparty'
 end
