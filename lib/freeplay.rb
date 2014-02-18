@@ -40,16 +40,16 @@ class Freeplay
   end
 
   def redeem(user_uri, hablet_id, email)
-    query = config.merge(
-      'habletID' => hablet_id,
-      'email' => email
+    body = config.merge(
+      "habletID" => hablet_id, 
+      "email" => email
     )
-    self.class.post("/user/#{user_uri}/app/#{@app_id}", query: query, headers: HEADERS)
+    self.class.post("/user/#{user_uri}/app/#{@app_id}/", body: body, headers: HEADERS)
   end
 
   private
 
   def config
-    {'token' => @api_token, 'key' => @api_key, 'appID' => @app_id}
+    {'key' => @api_key, 'token' => @api_token, 'appID' => @app_id}
   end
 end
