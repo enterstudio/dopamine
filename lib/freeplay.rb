@@ -6,7 +6,7 @@ class Freeplay
   #debug_output $stdout
   
   # use SSL
-  base_uri 'http://api.freeplay.co/v1'
+  base_uri 'http://api.usedopamine.com/v1'
   
   format :json
   
@@ -34,6 +34,8 @@ class Freeplay
 
   def reinforce?(user_uri, hablet_id)
     query = config.merge(
+      'deviceType' => @device_type,
+      'userURI' => user_uri,
       'habletID' => hablet_id
     )
     self.class.get("/user/#{user_uri}/app/#{@app_id}", query: query, headers: HEADERS)
@@ -41,8 +43,10 @@ class Freeplay
 
   def redeem(user_uri, hablet_id, email)
     body = config.merge(
-      "habletID" => hablet_id, 
-      "email" => email
+      'deviceType' => @device_type,
+      'userURI' => user_uri,
+      'habletID' => hablet_id, 
+      'email' => email
     )
     self.class.post("/user/#{user_uri}/app/#{@app_id}/", body: body, headers: HEADERS)
   end
