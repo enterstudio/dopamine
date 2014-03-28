@@ -1,6 +1,6 @@
 require 'httparty'
  
-class Freeplay
+class Dopamine
   include HTTParty
   
   #debug_output $stdout
