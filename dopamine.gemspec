@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
   s.description = "Rest client for Dopamine API, a behavioral reward platform"
   s.authors     = ["Marko Vasiljevic"]
   s.email       = 'marmarko@gmail.com'
-  s.files       = ["lib/freeplay.rb"]
+  s.files       = ["lib/dopamine.rb"]
   s.homepage    = 'http://rubygems.org/gems/dopamine'
   s.license     = 'MIT'
 
